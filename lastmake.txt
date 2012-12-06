@@ -1,0 +1,16 @@
+clang++  -c main.cpp
+main.cpp:35:5: error: use of undeclared identifier 'cout'; did you mean 'count'?
+    cout << "Die Standardanzahl an Ziehungen (1.000) wird vorbereitet.";
+    ^~~~
+    count
+/usr/include/c++/4.2.1/bits/stl_algo.h:424:5: note: 'count' declared here
+    count(_InputIterator __first, _InputIterator __last, const _Tp& __value)
+    ^
+main.cpp:35:5: error: cannot resolve overloaded function 'count' from context
+    cout << "Die Standardanzahl an Ziehungen (1.000) wird vorbereitet.";
+    ^~~~
+/usr/include/c++/4.2.1/bits/stl_algo.h:424:5: note: candidate function
+    count(_InputIterator __first, _InputIterator __last, const _Tp& __value)
+    ^
+2 errors generated.
+make[1]: *** [main.o] Error 1
