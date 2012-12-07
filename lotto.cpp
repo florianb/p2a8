@@ -5,4 +5,7 @@
 using namespace std;
 
 namespace Lotto {
+  class Draws {
+    
+  };
 }

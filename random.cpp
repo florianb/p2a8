@@ -23,9 +23,27 @@ namespace Random {
   
   Table::Table(int size) {
     table.resize(size);
+    timesUsed = 0;
     
     for (int i = 0; i < size; i++) {
       table.push_back(i);
     }
+  }
+  
+  int Table::random() {
+    if (!(table.size() % timesUsed) && timesUsed) {
+      timesUsed = 0;
+      shuffle();
+    }
+    else
+    {
+      timesUsed++;
+    }
+    
+    return table.at(timesUsed);
+  }
+  
+  int Table::random(int min, int max) {
+    return (random() % (max - min)) + min;
   }
 }

@@ -8,8 +8,8 @@ eine falsche Parameterzahl eingegeben wurde.
 **/
 
 #include <cstdlib>
+#include <iostream>
 #include <iomanip>
-#include <cstdio>
 
 #include "lotto.cpp"
   
