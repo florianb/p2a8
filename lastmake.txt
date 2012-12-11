@@ -1,2 +1,3 @@
 clang++  -c main.cpp
 clang++ -Wall -o lotto main.o 
+Mische Zufallszahlen... fertig.

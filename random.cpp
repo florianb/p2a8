@@ -18,7 +18,11 @@ namespace Random {
   };
   
   void Table::shuffle() {
+    cout << "Mische Zufallszahlen...";
+    cout.flush();
     random_shuffle(table.begin(), table.end());
+    cout << " fertig.\n";
+    cout.flush();
   }
   
   Table::Table(int size) {
@@ -28,6 +32,7 @@ namespace Random {
     for (int i = 0; i < size; i++) {
       table.push_back(i);
     }
+    shuffle();
   }
   
   int Table::random() {

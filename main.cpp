@@ -10,10 +10,27 @@ eine falsche Parameterzahl eingegeben wurde.
 #include <cstdlib>
 #include <iostream>
 #include <iomanip>
+#include <vector>
 
 #include "lotto.cpp"
   
 using namespace std;
+
+
+void simulate(int numberOfDrawings) {
+  vector<Lotto::Draw> drawings;
+  Random::Table *table = new Random::Table(60000);
+  
+  drawings.reserve(numberOfDrawings);
+  
+  for (int i = 0; i < numberOfDrawings; i++) {
+    drawings.push_back(Lotto::Draw(table));
+  }
+  
+  delete table;
+}
+
+
 
 /**
 Hauptfunktion überprüft, ob ein Kommandozeilenparameter übergeben wurde
@@ -32,6 +49,8 @@ int main(int argumentCounter, char* argumentValues[]) {
   if (numberOfDrawings < 1) {
     numberOfDrawings = 1000;
     
-    cout << "Die Standardanzahl an Ziehungen (1.000) wird vorbereitet.";
+    cout << "Die Standardanzahl an Ziehungen (" << numberOfDrawings << ") wird vorbereitet.";
   }
+  
+  simulate(numberOfDrawings);
 }
