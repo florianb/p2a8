@@ -16,16 +16,28 @@ eine falsche Parameterzahl eingegeben wurde.
   
 using namespace std;
 
+typedef vector<Lotto::Draw> vectorOfDrawings;
 
 void simulate(int numberOfDrawings) {
-  vector<Lotto::Draw> drawings;
-  Random::Table *table = new Random::Table(60000);
+  vectorOfDrawings drawings;
+  Random::Table *table = new Random::Table(1000000);
+  int fivePercent = numberOfDrawings / 20;
+  int onePercent = numberOfDrawings / 100;
   
   drawings.reserve(numberOfDrawings);
   
   for (int i = 0; i < numberOfDrawings; i++) {
+    if (i % fivePercent == 0)
+      cout << endl << setw(2) << i / fivePercent * 5 << "% gezogen";
+    if (i % onePercent == 0)
+      cout << ".";
     drawings.push_back(Lotto::Draw(table));
   }
+  
+  /**
+  for (vectorOfDrawings::iterator it = drawings.begin(); it != drawings.end(); ++it) {
+    cout << *it << "\n";
+  }**/
   
   delete table;
 }

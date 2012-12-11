@@ -1,5 +1,6 @@
 #include <cstdlib>
 #include <sstream>
+#include <iomanip>
 #include <algorithm>
 
 #include "random.cpp"
@@ -47,20 +48,18 @@ namespace Lotto {
     
     for (short int i = 0; i < 6; i++) {
       currentNumber = randomTable->random(1, 49 - i);
-      numberShift = 0;
-      for (short int j = 0; j <= i; j++) {
+      for (short int j = 0; j < i; j++) {
         if (numbers[j] <= currentNumber)
-          numberShift++;
+          currentNumber++;
       }
-      numbers[i] = currentNumber + numberShift;
+      numbers[i] = currentNumber;
+      sort(numbers, numbers + i + 1);
     }
-    
-    sort(numbers, numbers + 5);
   }
   
   bool Draw::isEven() {
     for (short int i = 0; i < 6; i++) {
-      if (i % 2 == 1)
+      if (numbers[i] % 2 == 1)
         return false;
     }
     return true;
@@ -68,7 +67,7 @@ namespace Lotto {
   
   bool Draw::isOdd() {
     for (short int i = 0; i < 6; i++) {
-      if (i % 2 == 0)
+      if (numbers[i] % 2 == 0)
         return false;
     }
     return true;
@@ -76,7 +75,7 @@ namespace Lotto {
   
   bool Draw::isPrime() {
     for (short int i = 0; i < 6; i++) {
-      if (!isPrimeHelper(i))
+      if (!isPrimeHelper(numbers[i]))
         return false;
     }
     return true;
@@ -84,10 +83,19 @@ namespace Lotto {
   
   bool Draw::isNotPrime() {
     for (short int i = 0; i < 6; i++) {
-      if (isPrimeHelper(i))
+      if (isPrimeHelper(numbers[i]))
         return false;
     }
     return true;
+  }
+  
+  bool Draw::containsLength() {
+    short int length = getLength();
+    for (short int i = 0; i < 6; i++) {
+      if(numbers[i] == length)
+        return true;
+    }
+    return false;
   }
   
   short int Draw::getLength() {
@@ -95,24 +103,39 @@ namespace Lotto {
   }
   
   short int Draw::getRank() {
-    short int rank = 1;
+    short int rank = 0;
     
-    for (short int i = 0; i < 4; i++) {
+    for (short int i = 0; i < 5; i++) {
       for (short int j = 1;
-          (i + j < 5) && (numbers[i + j - 1] == numbers[i + j] + 1);
+          (i + j < 6) && numbers[i + j] == (numbers[i + j - 1] + 1);
           j++) {
         if (j > rank)
           rank = j;
       }
     }
-    return rank;
+    return rank + 1;
   } 
   
   ostream& operator<<(ostream &out, Draw &draw) {
-    out << draw.numbers[0];
+    out << setw(2) << draw.numbers[0];
     for (short int i = 1; i < 6; i++) {
-      out << ", " << draw.numbers[i];
+      out << ", " << setw(2) << draw.numbers[i];
     }
+    
+    out << ", length: " << setw(2) << draw.getLength();
+    out << ", rank: " << draw.getRank();
+    
+    if (draw.isEven())
+      out << ", Even";
+    if (draw.isOdd())
+      out << ", Odd";
+    if (draw.isPrime())
+      out << ", Prime";
+    if (draw.isNotPrime())
+      out << ", No Prime";
+    if (draw.containsLength())
+      out << ", contains Length";
+    
     return out;
   }
   

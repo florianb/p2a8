@@ -18,15 +18,18 @@ namespace Random {
   };
   
   void Table::shuffle() {
-    cout << "Mische Zufallszahlen...";
-    cout.flush();
-    random_shuffle(table.begin(), table.end());
-    cout << " fertig.\n";
-    cout.flush();
+    //cout << "Mische Zufallszahlen...";
+    //cout.flush();
+    random_shuffle(table.begin(), table.end() - 1);
+    //cout << " fertig.\n";
+    
+    //cout.flush();
   }
   
   Table::Table(int size) {
-    table.resize(size);
+    srand(time(NULL));
+    
+    table.reserve(size);
     timesUsed = 0;
     
     for (int i = 0; i < size; i++) {
@@ -36,19 +39,16 @@ namespace Random {
   }
   
   int Table::random() {
-    if (!(table.size() % timesUsed) && timesUsed) {
+    if ((table.size() - timesUsed) <= 0) {
       timesUsed = 0;
       shuffle();
     }
-    else
-    {
-      timesUsed++;
-    }
+    timesUsed++;
     
-    return table.at(timesUsed);
+    return table[timesUsed - 1];
   }
   
   int Table::random(int min, int max) {
-    return (random() % (max - min)) + min;
+    return (random() % ((max + 1) - min)) + min;
   }
 }
