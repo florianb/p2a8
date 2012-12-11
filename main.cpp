@@ -20,7 +20,7 @@ typedef vector<Lotto::Draw> vectorOfDrawings;
 
 void simulate(int numberOfDrawings) {
   vectorOfDrawings drawings;
-  Random::Table *table = new Random::Table(1000000);
+  Random::Table *table = new Random::Table(6000);
   int fivePercent = numberOfDrawings / 20;
   int onePercent = numberOfDrawings / 100;
   
@@ -28,9 +28,9 @@ void simulate(int numberOfDrawings) {
   
   for (int i = 0; i < numberOfDrawings; i++) {
     if (i % fivePercent == 0)
-      cout << endl << setw(2) << i / fivePercent * 5 << "% gezogen";
+      cout << endl << setw(2) << i / fivePercent * 5 << "% gezogen" << flush;
     if (i % onePercent == 0)
-      cout << ".";
+      cout << "." << flush;
     drawings.push_back(Lotto::Draw(table));
   }
   
