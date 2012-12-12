@@ -13,17 +13,12 @@ namespace Random {
     void shuffle();
   public:
     Table(int size);
-    int random();
-    int random(int min, int max);
+    int random(bool weighted = true);
+    int random(int min, int max, bool weighted = true);
   };
   
   void Table::shuffle() {
-    //cout << "Mische Zufallszahlen...";
-    //cout.flush();
     random_shuffle(table.begin(), table.end() - 1);
-    //cout << " fertig.\n";
-    
-    //cout.flush();
   }
   
   Table::Table(int size) {
@@ -38,17 +33,21 @@ namespace Random {
     shuffle();
   }
   
-  int Table::random() {
-    if ((table.size() - timesUsed) <= 0) {
-      timesUsed = 0;
-      shuffle();
-    }
-    timesUsed++;
+  int Table::random(bool weighted) {
+    if (weighted) {
+      if ((table.size() - timesUsed) <= 0) {
+        timesUsed = 0;
+        shuffle();
+      }
+      timesUsed++;
     
-    return table[timesUsed - 1];
+      return table[timesUsed - 1];
+    } else {
+      return rand();
+    }
   }
   
-  int Table::random(int min, int max) {
-    return (random() % ((max + 1) - min)) + min;
+  int Table::random(int min, int max, bool weighted) {
+    return (random(weighted) % ((max + 1) - min)) + min;
   }
 }

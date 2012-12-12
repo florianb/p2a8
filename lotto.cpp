@@ -25,6 +25,7 @@ namespace Lotto {
     bool containsLength();
     short int getLength();
     short int getRank();
+    short int getNumber(short int index);
     
     friend ostream& operator<<(ostream &out, Draw &draw);
   };
@@ -47,7 +48,7 @@ namespace Lotto {
     short int numberShift;
     
     for (short int i = 0; i < 6; i++) {
-      currentNumber = randomTable->random(1, 49 - i);
+      currentNumber = randomTable->random(1, 49 - i, false);
       for (short int j = 0; j < i; j++) {
         if (numbers[j] <= currentNumber)
           currentNumber++;
@@ -114,7 +115,11 @@ namespace Lotto {
       }
     }
     return rank + 1;
-  } 
+  }
+  
+  short int Draw::getNumber(short int index) {
+    return numbers[index];
+  }
   
   ostream& operator<<(ostream &out, Draw &draw) {
     out << setw(2) << draw.numbers[0];
