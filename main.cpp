@@ -45,7 +45,7 @@ template<class T> void input(T &input) {
 }
 
 /**
-Funktion gibt die Anzahl der Jahre und Monate aus, für die Ziehungen vorliegen.
+Funktion gibt die Anzahl der Jahre und Monate aus, für die Ziehungen vorliegen
 
 @param numberOfDrawings Anzahl der vorliegenden Ziehungen
 **/
@@ -54,6 +54,11 @@ void displayInformation(int numberOfDrawings) {
        << numberOfDrawings % 52 << " Wochen." << endl;
 }
 
+/**
+Funktion gibt die Verteilungsstatistik der gezogenen Zahlen aus
+
+@param drawings Ziehungen-Container
+**/
 void displayNumberStatistics(vectorOfDrawings *drawings) {
   int lessFrequentNumber = 0;
   int mostFrequentNumber = 0;
@@ -88,6 +93,11 @@ void displayNumberStatistics(vectorOfDrawings *drawings) {
   cout << "Das ist eine Differenz von " << highestFrequency - lowestFrequency << " Ziehungen." << endl;
 }
 
+/**
+Funktion gibt die Verteilungsstatistik der niedrigsten gezogenen Zahlen aus
+
+@param drawings Ziehungen-Container
+**/
 void displayLowestNumberStatistics(vectorOfDrawings *drawings) {
   int numberCounts[50];
   
@@ -105,6 +115,11 @@ void displayLowestNumberStatistics(vectorOfDrawings *drawings) {
   }
 }
 
+/**
+Funktion gibt die Verteilungsstatistik der höchsten gezogenen Zahlen aus
+
+@param drawings Ziehungen-Container
+**/
 void displayHighestNumberStatistics(vectorOfDrawings *drawings) {
   int numberCounts[50];
   
@@ -122,6 +137,14 @@ void displayHighestNumberStatistics(vectorOfDrawings *drawings) {
   }
 }
 
+/**
+Funktion gibt die Verteilungsstatistik der Ziehungslängen aus
+
+Unterziehungslänge versteht man die Differenz zwischen der niedrigsten und höchsten Zahl einer
+Ziehung
+
+@param drawings Ziehung-Container
+**/
 void displayDrawLengthStatistics(vectorOfDrawings *drawings) {
   int numberCounts[49];
   
@@ -130,7 +153,7 @@ void displayDrawLengthStatistics(vectorOfDrawings *drawings) {
   }
   
   for (vectorOfDrawings::iterator it = drawings->begin(); it != drawings->end(); ++it) {
-    numberCounts[it->getNumber(5) - it->getNumber(0)]++;
+    numberCounts[it->getLength()]++;
   }
   
   cout << "Häufigkeit der Ziehungslängen:" << endl;
@@ -139,14 +162,17 @@ void displayDrawLengthStatistics(vectorOfDrawings *drawings) {
   }
 }
 
+/**
+Funktion gibt die Anzahl und den Anteil der Ziehungen aus, die ihre Länge als gezogene Zahl enthalten
+
+@param drawings Ziehungen-Container
+**/
 void displayContainingLengthStatistics(vectorOfDrawings *drawings) {
   int containingLength = 0;
-  short int currentLength = 0;
   
   for (vectorOfDrawings::iterator it = drawings->begin(); it != drawings->end(); ++it) {
-    currentLength = it->getNumber(5) - it->getNumber(0);
     for (short int i = 0; i < 6; i++) {
-      if (it->getNumber(i) == currentLength)
+      if (it->containsLength())
         containingLength++;
     }
   }
@@ -154,6 +180,13 @@ void displayContainingLengthStatistics(vectorOfDrawings *drawings) {
   cout << containingLength << " Ziehungen enthalten ihre Länge, dass sind " << fixed << setprecision(2) << 100.0 * containingLength / drawings->size() << " %." << endl << flush;
 }
 
+/**
+Funktion gibt die Verteilungsstatistik der Ziehungsränge (k) aus
+
+Unter Ziehungsrang versteht man die größte Anzahl aufeinander folgender Zahlen pro Ziehung
+
+@param drawings Ziehung-Container
+**/
 void displayRankStatistics(vectorOfDrawings *drawings) {
   int rankCounts[7];
   
@@ -171,6 +204,11 @@ void displayRankStatistics(vectorOfDrawings *drawings) {
   }
 }
 
+/**
+Funktion gibt die Anzahl und den Anteil der Ziehungen aus, deren gezogenen Zahlen gerade sind
+
+@param drawings Ziehungen-Container
+**/
 void displayEvenStatistics(vectorOfDrawings *drawings) {
   int evenDrawings = 0;
   
@@ -181,6 +219,11 @@ void displayEvenStatistics(vectorOfDrawings *drawings) {
   cout << "Es gibt " << evenDrawings << " gerade Ziehungen, das sind " << fixed << setprecision(2) << 100.0 * evenDrawings / drawings->size() << " %." << endl;
 }
 
+/**
+Funktion gibt die Anzahl und den Anteil der Ziehungen aus, deren gezogenen Zahlen ungerade sind
+
+@param drawings Ziehungen-Container
+**/
 void displayOddStatistics(vectorOfDrawings *drawings) {
   int oddDrawings = 0;
   
@@ -191,6 +234,11 @@ void displayOddStatistics(vectorOfDrawings *drawings) {
   cout << "Es gibt " << oddDrawings << " ungerade Ziehungen, das sind " << fixed << setprecision(2) << 100.0 * oddDrawings / drawings->size() << " %." << endl;
 }
 
+/**
+Funktion gibt die Anzahl und den Anteil der Ziehungen aus, deren gezogenen Zahlen Primzahlen sind
+
+@param drawings Ziehungen-Container
+**/
 void displayPrimeStatistics(vectorOfDrawings *drawings) {
   int primeDrawings = 0;
   
@@ -201,6 +249,12 @@ void displayPrimeStatistics(vectorOfDrawings *drawings) {
   cout << "Es gibt " << primeDrawings << " Ziehungen, die komplett aus Primzahlen bestehen. Das sind " << fixed << setprecision(2) << 100.0 * primeDrawings / drawings->size() << " %." << endl;
 }
 
+
+/**
+Funktion gibt die Anzahl und den Anteil der Ziehungen aus, deren gezogenen Zahlen keine Primzahlen sind
+
+@param drawings Ziehungen-Container
+**/
 void displayNotPrimeStatistics(vectorOfDrawings *drawings) {
   int notPrimeDrawings = 0;
   
@@ -211,6 +265,14 @@ void displayNotPrimeStatistics(vectorOfDrawings *drawings) {
   cout << "Es gibt " << notPrimeDrawings << " Ziehungen, in denen keine Primzahlen vorkommen. Das sind " << fixed << setprecision(2) << 100.0 * notPrimeDrawings / drawings->size() << " %." << endl;
 }
 
+
+/**
+Funktion lässt den Nutzer einen Lotto-Tip abgeben und gibt anschließend eine Trefferstatistik aus
+
+Die Funktion prüft außerdem, ob der Nutzer versehentlich doppelte Eingaben tätigt.
+
+@param drawings Ziehungen-Container
+**/
 void checkTip(vectorOfDrawings *drawings) {
   short int tip[6] = {0, 0, 0, 0, 0, 0};
   int hits[7] = {0, 0, 0, 0, 0, 0};
@@ -256,6 +318,13 @@ void checkTip(vectorOfDrawings *drawings) {
   }
 }
 
+
+/**
+Funktion gibt so lange Lotto-Tips ab, bis 6 richtige Zahlen getippt wurden
+
+@param drawings Ziehungen-Container
+@param table Zufallstabelle die verwendet werden soll
+**/
 void tipSix(vectorOfDrawings *drawings, Random::Table *table) {
   bool tippedSix = false;
   int tips = 1;
@@ -275,6 +344,9 @@ void tipSix(vectorOfDrawings *drawings, Random::Table *table) {
   } while (!tippedSix);
 }
 
+/**
+Funktion gibt das grafische Auswahlmenü für den Nutzer aus
+**/
 void printMenu() {
   cout << "Bitte waehlen:" << endl
       << "(1) Information" << endl
@@ -295,6 +367,9 @@ void printMenu() {
       << "Ihre Wahl:" << endl << flush;
 }
 
+/**
+Funktion führt abhängig von den Parametern die gewünschte Funktion der Simulation aus
+**/
 void menuAction(int userInput, int numberOfDrawings, vectorOfDrawings *drawings, Random::Table *table) {
   cout << endl;
   if (userInput == 1)
@@ -327,8 +402,13 @@ void menuAction(int userInput, int numberOfDrawings, vectorOfDrawings *drawings,
 }
 
 /**
+Funktion simuliert die Ziehung der gewünschten Lottozahlen und nimmt die Benutzereingabe entgegen
 
+Die Funktion simuliert die gewünschte Anzahl an Lottoziehungen und legt diese im Arbeitsspeicher ab. Im Anschluss
+wird der Nutzer zur Auswahl der gewünschten Funktion aufgefordert. Der Nutzer kann sich entscheiden eine erneute Ziehung
+vornehmen zu lassen, diese wird dann durchgeführt.
 
+@param numberOfDrawings Initial gewünschte Anzahl an Ziehungen
 **/
 void simulate(int numberOfDrawings) {
   vectorOfDrawings drawings;
@@ -383,9 +463,12 @@ void simulate(int numberOfDrawings) {
 Hauptfunktion überprüft, ob ein Kommandozeilenparameter übergeben wurde
 
 Wurde ein Kommandozeilenparameter (n) übergeben, versucht die Routine den Wert
-als Zahl einzulesen, schlägt dies fehl wird ein Standardert (50)
+als Zahl einzulesen, schlägt dies fehl wird ein Standardert (1000)
 angenommen.
-Startet außerdem die Hauptroutine zur Simulationsausführung.
+Startet außerdem die Hauptroutine zur Simulationsausführung mit der gewünschten Anzahl an Ziehungen.
+
+@param argumentCounter Anzahl übergebener Kommandozeilenparameter
+@param argumentValues Feld mit Zeigern auf CStrings, die die Kommandozeilenparameter enthalten
 **/
 int main(int argumentCounter, char* argumentValues[]) {
   int numberOfDrawings = 0;
