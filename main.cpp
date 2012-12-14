@@ -299,7 +299,7 @@ void checkTip(vectorOfDrawings *drawings) {
     } while (invalidInput);
   }
   sort(tip, tip + 6);
-  cout << "Ihr Tip lautet: " << tip[0] << ", " << tip[1] << ", " << tip[2] << ", " << tip[3] << ", " << tip[4] << ", " << tip[5] << endl;
+  cout << "Ihr Tip lautet: " << tip[0] << ", " << tip[1] << ", " << tip[2] << ", " << tip[3] << ", " << tip[4] << ", " << tip[5] << ", untersuche Ziehungen..." << endl;
   
   for (vectorOfDrawings::iterator it = drawings->begin(); it != drawings->end(); ++it) {
     hitCount = 0;
@@ -328,19 +328,22 @@ Funktion gibt so lange Lotto-Tips ab, bis 6 richtige Zahlen getippt wurden
 void tipSix(vectorOfDrawings *drawings, Random::Table *table) {
   bool tippedSix = false;
   int tips = 1;
+  int compares = 0;
   Lotto::Draw tip(table);
   cout << "Tippe auf 6 richtige.." << flush;
   do {
-    for (vectorOfDrawings::iterator it = drawings->begin(); it != drawings->end(); ++it) {
+    for (vectorOfDrawings::iterator it = drawings->begin(); it != drawings->end() && tippedSix == false; ++it) {
+      compares++;
       if (tips % 10000 == 0)
         cout << "." << flush;
       if (*it == tip) {
         tippedSix = true;
-        cout << endl << "6 richtige (" << tip << ") nach " << tips << " Versuchen getippt." << endl << flush;
+        cout << endl << "6 richtige (" << tip << ")" << endl
+          << " nach " << tips << " Versuchen (und " << compares << " Vergleichen) getippt." << endl << flush;
       }
-      tip.drawNumbers(table);
-      tips++;
     }
+    tip.drawNumbers(table);
+    tips++;
   } while (!tippedSix);
 }
 
