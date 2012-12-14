@@ -27,6 +27,8 @@ namespace Lotto {
     short int getRank();
     short int getNumber(short int index);
     
+    friend bool operator==(Draw &first, Draw &second);
+    
     friend ostream& operator<<(ostream &out, Draw &draw);
   };
   
@@ -119,6 +121,15 @@ namespace Lotto {
   
   short int Draw::getNumber(short int index) {
     return numbers[index];
+  }
+  
+  bool operator==(Draw &first, Draw &second) {
+    for(short int i = 0; i < 6; i++)
+    {
+      if(first.getNumber(i) != second.getNumber(i))
+        return false;
+    }
+    return true;
   }
   
   ostream& operator<<(ostream &out, Draw &draw) {

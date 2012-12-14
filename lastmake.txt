@@ -21,96 +21,170 @@ clang++ -Wall -o lotto main.o
 85% gezogen.....
 90% gezogen.....
 95% gezogen.....
-Wir haben genug Ziehungen für 192 Jahre und 16 Wochen.
+Bitte waehlen:
+(1) Information
+(2) Haeufigkeitsverteilung
+(3) Verteilung der Minima
+(4) Verteilung der Maxima
+(5) Verteilung der Ziehungslaengen
+(6) Anzahl Ziehungen, die ihre Laenge enthalten
+(7) Anzahl gerade Ziehungen
+(8) Anzahl ungerade Ziehungen
+(9) Anzahl Primziehungen
+(10) Anzahl Nichtprimziehungen
+(11) Verteilung der k-Ziehungen
+(12) Tippen
+(13) Automatisch Tippen
+(14) Neue Ziehungen
+(15) Beenden
+
+Ihre Wahl:
+Geben die Anzahl zu tätigender Ziehungen ein (mindestens 1):
+
+Bitte waehlen:
+(1) Information
+(2) Haeufigkeitsverteilung
+(3) Verteilung der Minima
+(4) Verteilung der Maxima
+(5) Verteilung der Ziehungslaengen
+(6) Anzahl Ziehungen, die ihre Laenge enthalten
+(7) Anzahl gerade Ziehungen
+(8) Anzahl ungerade Ziehungen
+(9) Anzahl Primziehungen
+(10) Anzahl Nichtprimziehungen
+(11) Verteilung der k-Ziehungen
+(12) Tippen
+(13) Automatisch Tippen
+(14) Neue Ziehungen
+(15) Beenden
+
+Ihre Wahl:
+Wir haben genug Ziehungen für 0 Jahre und 1 Wochen.
+Bitte waehlen:
+(1) Information
+(2) Haeufigkeitsverteilung
+(3) Verteilung der Minima
+(4) Verteilung der Maxima
+(5) Verteilung der Ziehungslaengen
+(6) Anzahl Ziehungen, die ihre Laenge enthalten
+(7) Anzahl gerade Ziehungen
+(8) Anzahl ungerade Ziehungen
+(9) Anzahl Primziehungen
+(10) Anzahl Nichtprimziehungen
+(11) Verteilung der k-Ziehungen
+(12) Tippen
+(13) Automatisch Tippen
+(14) Neue Ziehungen
+(15) Beenden
+
+Ihre Wahl:
 Häufigkeit der gezogenen Zahlen:
- 1: 1229
- 2: 1182
- 3: 1178
- 4: 1222
- 5: 1221
- 6: 1233
- 7: 1199
- 8: 1267
- 9: 1242
-10: 1239
-11: 1178
-12: 1209
-13: 1229
-14: 1185
-15: 1242
-16: 1214
-17: 1230
-18: 1178
-19: 1225
-20: 1254
-21: 1180
-22: 1185
-23: 1251
-24: 1220
-25: 1253
-26: 1316
-27: 1255
-28: 1249
-29: 1303
-30: 1211
-31: 1220
-32: 1234
-33: 1219
-34: 1239
-35: 1236
-36: 1202
-37: 1201
-38: 1192
-39: 1243
-40: 1252
-41: 1235
-42: 1206
-43: 1248
-44: 1172
-45: 1202
-46: 1249
-47: 1232
-48: 1197
-49: 1242
-Die Zahl 26 wurde mit 1316 mal am häufigsten gezogen.
-Die Zahl 44 wurde mit 1172 mal am seltensten gezogen.
- Das ist eine Differenz von 144 Ziehungen.
+ 1: 0
+ 2: 0
+ 3: 0
+ 4: 0
+ 5: 0
+ 6: 0
+ 7: 1
+ 8: 0
+ 9: 0
+10: 0
+11: 0
+12: 0
+13: 1
+14: 0
+15: 0
+16: 0
+17: 0
+18: 0
+19: 0
+20: 0
+21: 0
+22: 0
+23: 1
+24: 0
+25: 0
+26: 0
+27: 0
+28: 0
+29: 1
+30: 0
+31: 0
+32: 0
+33: 0
+34: 0
+35: 1
+36: 0
+37: 0
+38: 0
+39: 0
+40: 0
+41: 0
+42: 0
+43: 0
+44: 0
+45: 0
+46: 0
+47: 0
+48: 0
+49: 1
+Die Zahl 7 wurde mit 1 mal am häufigsten gezogen.
+Die Zahl 1 wurde mit 0 mal am seltensten gezogen.
+Das ist eine Differenz von 1 Ziehungen.
+Bitte waehlen:
+(1) Information
+(2) Haeufigkeitsverteilung
+(3) Verteilung der Minima
+(4) Verteilung der Maxima
+(5) Verteilung der Ziehungslaengen
+(6) Anzahl Ziehungen, die ihre Laenge enthalten
+(7) Anzahl gerade Ziehungen
+(8) Anzahl ungerade Ziehungen
+(9) Anzahl Primziehungen
+(10) Anzahl Nichtprimziehungen
+(11) Verteilung der k-Ziehungen
+(12) Tippen
+(13) Automatisch Tippen
+(14) Neue Ziehungen
+(15) Beenden
+
+Ihre Wahl:
 Häufigkeit der niedrigsten gezogenen Zahlen:
- 1: 1229
- 2: 1052
- 3: 947
- 4: 869
- 5: 771
- 6: 706
- 7: 611
- 8: 551
- 9: 514
-10: 456
-11: 342
-12: 302
-13: 279
-14: 224
-15: 212
-16: 168
-17: 160
-18: 111
-19: 84
-20: 81
-21: 60
-22: 53
-23: 37
-24: 37
-25: 38
-26: 30
-27: 22
-28: 15
-29: 12
-30: 9
-31: 7
-32: 3
-33: 2
-34: 2
-35: 4
+ 1: 0
+ 2: 0
+ 3: 0
+ 4: 0
+ 5: 0
+ 6: 0
+ 7: 1
+ 8: 0
+ 9: 0
+10: 0
+11: 0
+12: 0
+13: 0
+14: 0
+15: 0
+16: 0
+17: 0
+18: 0
+19: 0
+20: 0
+21: 0
+22: 0
+23: 0
+24: 0
+25: 0
+26: 0
+27: 0
+28: 0
+29: 0
+30: 0
+31: 0
+32: 0
+33: 0
+34: 0
+35: 0
 36: 0
 37: 0
 38: 0
@@ -125,97 +199,260 @@ Häufigkeit der niedrigsten gezogenen Zahlen:
 47: 0
 48: 0
 49: 0
-Häufigkeit der höchsten gezogenen Zahlen:
- 1: 0
- 2: 0
- 3: 0
- 4: 0
- 5: 0
- 6: 0
- 7: 0
- 8: 0
- 9: 0
-10: 0
-11: 0
-12: 0
-13: 0
-14: 0
-15: 1
-16: 2
-17: 5
-18: 5
-19: 12
-20: 8
-21: 9
-22: 11
-23: 23
-24: 18
-25: 25
-26: 29
-27: 37
-28: 78
-29: 77
-30: 83
-31: 103
-32: 115
-33: 127
-34: 194
-35: 217
-36: 232
-37: 251
-38: 317
-39: 309
-40: 408
-41: 508
-42: 517
-43: 621
-44: 677
-45: 741
-46: 919
-47: 1006
-48: 1073
-49: 1242
+Bitte waehlen:
+(1) Information
+(2) Haeufigkeitsverteilung
+(3) Verteilung der Minima
+(4) Verteilung der Maxima
+(5) Verteilung der Ziehungslaengen
+(6) Anzahl Ziehungen, die ihre Laenge enthalten
+(7) Anzahl gerade Ziehungen
+(8) Anzahl ungerade Ziehungen
+(9) Anzahl Primziehungen
+(10) Anzahl Nichtprimziehungen
+(11) Verteilung der k-Ziehungen
+(12) Tippen
+(13) Automatisch Tippen
+(14) Neue Ziehungen
+(15) Beenden
+
+Ihre Wahl:
+Häufigkeit der K-Ränge:
+ 1:            1    100.00 %
+ 2:            0      0.00 %
+ 3:            0      0.00 %
+ 4:            0      0.00 %
+ 5:            0      0.00 %
+ 6:            0      0.00 %
+Bitte waehlen:
+(1) Information
+(2) Haeufigkeitsverteilung
+(3) Verteilung der Minima
+(4) Verteilung der Maxima
+(5) Verteilung der Ziehungslaengen
+(6) Anzahl Ziehungen, die ihre Laenge enthalten
+(7) Anzahl gerade Ziehungen
+(8) Anzahl ungerade Ziehungen
+(9) Anzahl Primziehungen
+(10) Anzahl Nichtprimziehungen
+(11) Verteilung der k-Ziehungen
+(12) Tippen
+(13) Automatisch Tippen
+(14) Neue Ziehungen
+(15) Beenden
+
+Ihre Wahl:
 Häufigkeit der Ziehungslängen:
  6:            0      0.00 %
- 7:            1      0.01 %
+ 7:            0      0.00 %
  8:            0      0.00 %
  9:            0      0.00 %
-10:            2      0.02 %
-11:            1      0.01 %
-12:            6      0.06 %
-13:            4      0.04 %
-14:           21      0.21 %
-15:           32      0.32 %
-16:           29      0.29 %
-17:           56      0.56 %
-18:           60      0.60 %
-19:           66      0.66 %
-20:           69      0.69 %
-21:           91      0.91 %
-22:          129      1.29 %
-23:          121      1.21 %
-24:          146      1.46 %
-25:          185      1.85 %
-26:          220      2.20 %
-27:          230      2.30 %
-28:          252      2.52 %
-29:          275      2.75 %
-30:          349      3.49 %
-31:          370      3.70 %
-32:          384      3.84 %
-33:          427      4.27 %
-34:          460      4.60 %
-35:          437      4.37 %
-36:          472      4.72 %
-37:          531      5.31 %
-38:          499      4.99 %
-39:          541      5.41 %
-40:          535      5.35 %
-41:          535      5.35 %
-42:          470      4.70 %
-43:          481      4.81 %
-44:          438      4.38 %
-45:          396      3.96 %
-46:          319      3.19 %
-47:          229      2.29 %
-48:          131      1.31 %
+10:            0      0.00 %
+11:            0      0.00 %
+12:            0      0.00 %
+13:            0      0.00 %
+14:            0      0.00 %
+15:            0      0.00 %
+16:            0      0.00 %
+17:            0      0.00 %
+18:            0      0.00 %
+19:            0      0.00 %
+20:            0      0.00 %
+21:            0      0.00 %
+22:            0      0.00 %
+23:            0      0.00 %
+24:            0      0.00 %
+25:            0      0.00 %
+26:            0      0.00 %
+27:            0      0.00 %
+28:            0      0.00 %
+29:            0      0.00 %
+30:            0      0.00 %
+31:            0      0.00 %
+32:            0      0.00 %
+33:            0      0.00 %
+34:            0      0.00 %
+35:            0      0.00 %
+36:            0      0.00 %
+37:            0      0.00 %
+38:            0      0.00 %
+39:            0      0.00 %
+40:            0      0.00 %
+41:            0      0.00 %
+42:            1    100.00 %
+43:            0      0.00 %
+44:            0      0.00 %
+45:            0      0.00 %
+46:            0      0.00 %
+47:            0      0.00 %
+48:            0      0.00 %
+Bitte waehlen:
+(1) Information
+(2) Haeufigkeitsverteilung
+(3) Verteilung der Minima
+(4) Verteilung der Maxima
+(5) Verteilung der Ziehungslaengen
+(6) Anzahl Ziehungen, die ihre Laenge enthalten
+(7) Anzahl gerade Ziehungen
+(8) Anzahl ungerade Ziehungen
+(9) Anzahl Primziehungen
+(10) Anzahl Nichtprimziehungen
+(11) Verteilung der k-Ziehungen
+(12) Tippen
+(13) Automatisch Tippen
+(14) Neue Ziehungen
+(15) Beenden
+
+Ihre Wahl:
+0 Ziehungen enthalten ihre Länge, dass sind 0.00 %.
+Bitte waehlen:
+(1) Information
+(2) Haeufigkeitsverteilung
+(3) Verteilung der Minima
+(4) Verteilung der Maxima
+(5) Verteilung der Ziehungslaengen
+(6) Anzahl Ziehungen, die ihre Laenge enthalten
+(7) Anzahl gerade Ziehungen
+(8) Anzahl ungerade Ziehungen
+(9) Anzahl Primziehungen
+(10) Anzahl Nichtprimziehungen
+(11) Verteilung der k-Ziehungen
+(12) Tippen
+(13) Automatisch Tippen
+(14) Neue Ziehungen
+(15) Beenden
+
+Ihre Wahl:
+Es gibt 0 gerade Ziehungen, das sind 0.00 %.
+Bitte waehlen:
+(1) Information
+(2) Haeufigkeitsverteilung
+(3) Verteilung der Minima
+(4) Verteilung der Maxima
+(5) Verteilung der Ziehungslaengen
+(6) Anzahl Ziehungen, die ihre Laenge enthalten
+(7) Anzahl gerade Ziehungen
+(8) Anzahl ungerade Ziehungen
+(9) Anzahl Primziehungen
+(10) Anzahl Nichtprimziehungen
+(11) Verteilung der k-Ziehungen
+(12) Tippen
+(13) Automatisch Tippen
+(14) Neue Ziehungen
+(15) Beenden
+
+Ihre Wahl:
+Es gibt 1 ungerade Ziehungen, das sind 100.00 %.
+Bitte waehlen:
+(1) Information
+(2) Haeufigkeitsverteilung
+(3) Verteilung der Minima
+(4) Verteilung der Maxima
+(5) Verteilung der Ziehungslaengen
+(6) Anzahl Ziehungen, die ihre Laenge enthalten
+(7) Anzahl gerade Ziehungen
+(8) Anzahl ungerade Ziehungen
+(9) Anzahl Primziehungen
+(10) Anzahl Nichtprimziehungen
+(11) Verteilung der k-Ziehungen
+(12) Tippen
+(13) Automatisch Tippen
+(14) Neue Ziehungen
+(15) Beenden
+
+Ihre Wahl:
+Es gibt 0 Ziehungen, die komplett aus Primzahlen bestehen. Das sind 0.00 %.
+Bitte waehlen:
+(1) Information
+(2) Haeufigkeitsverteilung
+(3) Verteilung der Minima
+(4) Verteilung der Maxima
+(5) Verteilung der Ziehungslaengen
+(6) Anzahl Ziehungen, die ihre Laenge enthalten
+(7) Anzahl gerade Ziehungen
+(8) Anzahl ungerade Ziehungen
+(9) Anzahl Primziehungen
+(10) Anzahl Nichtprimziehungen
+(11) Verteilung der k-Ziehungen
+(12) Tippen
+(13) Automatisch Tippen
+(14) Neue Ziehungen
+(15) Beenden
+
+Ihre Wahl:
+Es gibt 0 Ziehungen, in denen keine Primzahlen vorkommen. Das sind 0.00 %.
+Bitte waehlen:
+(1) Information
+(2) Haeufigkeitsverteilung
+(3) Verteilung der Minima
+(4) Verteilung der Maxima
+(5) Verteilung der Ziehungslaengen
+(6) Anzahl Ziehungen, die ihre Laenge enthalten
+(7) Anzahl gerade Ziehungen
+(8) Anzahl ungerade Ziehungen
+(9) Anzahl Primziehungen
+(10) Anzahl Nichtprimziehungen
+(11) Verteilung der k-Ziehungen
+(12) Tippen
+(13) Automatisch Tippen
+(14) Neue Ziehungen
+(15) Beenden
+
+Ihre Wahl:
+Häufigkeit der K-Ränge:
+ 1:            1    100.00 %
+ 2:            0      0.00 %
+ 3:            0      0.00 %
+ 4:            0      0.00 %
+ 5:            0      0.00 %
+ 6:            0      0.00 %
+Bitte waehlen:
+(1) Information
+(2) Haeufigkeitsverteilung
+(3) Verteilung der Minima
+(4) Verteilung der Maxima
+(5) Verteilung der Ziehungslaengen
+(6) Anzahl Ziehungen, die ihre Laenge enthalten
+(7) Anzahl gerade Ziehungen
+(8) Anzahl ungerade Ziehungen
+(9) Anzahl Primziehungen
+(10) Anzahl Nichtprimziehungen
+(11) Verteilung der k-Ziehungen
+(12) Tippen
+(13) Automatisch Tippen
+(14) Neue Ziehungen
+(15) Beenden
+
+Ihre Wahl:
+Bitte geben Sie die 1. Zahl (1-49) ein:
+Bitte geben Sie die 2. Zahl (1-49) ein:
+Bitte geben Sie die 3. Zahl (1-49) ein:
+Bitte geben Sie die 4. Zahl (1-49) ein:
+Bitte geben Sie die 5. Zahl (1-49) ein:
+Bitte geben Sie die 6. Zahl (1-49) ein:
+Ihr Tip lautet: 1, 3, 5, 7, 8, 9
+Sie haben 1 mal 1 Treffer.
+Sie haben 0 mal 2 Treffer.
+Sie haben 0 mal 3 Treffer.
+Sie haben 0 mal 4 Treffer.
+Sie haben 0 mal 5 Treffer.
+Sie haben 0 mal 6 Treffer.
+Bitte waehlen:
+(1) Information
+(2) Haeufigkeitsverteilung
+(3) Verteilung der Minima
+(4) Verteilung der Maxima
+(5) Verteilung der Ziehungslaengen
+(6) Anzahl Ziehungen, die ihre Laenge enthalten
+(7) Anzahl gerade Ziehungen
+(8) Anzahl ungerade Ziehungen
+(9) Anzahl Primziehungen
+(10) Anzahl Nichtprimziehungen
+(11) Verteilung der k-Ziehungen
+(12) Tippen
+(13) Automatisch Tippen
+(14) Neue Ziehungen
+(15) Beenden
+
+Ihre Wahl:
+Tippe auf 6 richtige..........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................

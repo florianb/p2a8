@@ -13,8 +13,8 @@ namespace Random {
     void shuffle();
   public:
     Table(int size);
-    int random(bool weighted = true);
-    int random(int min, int max, bool weighted = true);
+    int random(bool weighted = true, bool reshuffle = true);
+    int random(int min, int max, bool weighted = true, bool reshuffle = true);
   };
   
   void Table::shuffle() {
@@ -33,11 +33,12 @@ namespace Random {
     shuffle();
   }
   
-  int Table::random(bool weighted) {
+  int Table::random(bool weighted, bool reshuffle) {
     if (weighted) {
       if ((table.size() - timesUsed) <= 0) {
         timesUsed = 0;
-        shuffle();
+        if (reshuffle)
+          shuffle();
       }
       timesUsed++;
     
@@ -47,7 +48,7 @@ namespace Random {
     }
   }
   
-  int Table::random(int min, int max, bool weighted) {
-    return (random(weighted) % ((max + 1) - min)) + min;
+  int Table::random(int min, int max, bool weighted, bool reshuffle) {
+    return (random(weighted, reshuffle) % ((max + 1) - min)) + min;
   }
 }
